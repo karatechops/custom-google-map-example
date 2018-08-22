@@ -103,6 +103,21 @@
           title: 'High Point!',
           icon: 'custom-marker.png',
         });
+
+        var contentString = '<div id="content">'+
+          '<h1 id="firstHeading" class="firstHeading">High Point</h1>'+
+          '<div id="bodyContent">'+
+          '<p>This is High Point, NC</p>'+
+          '</div>'+
+          '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lYdDMBfj78n3Ux-kEimKYxQ5fQq9foA&callback=initMap"
